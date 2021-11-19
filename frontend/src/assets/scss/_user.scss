@@ -1,0 +1,197 @@
+.inputText {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    transition: all 0.30s;
+}
+
+.inputTextErr {
+    background: #bbc8e9;
+}
+
+.inputs {
+    margin: 0px 0 20px;
+    position: relative;
+    label {
+        text-align: left;
+        width: 43%;
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 20px;
+        position: relative;
+        left: 2px;
+    }
+
+}
+
+.btnDiv {
+    width: 43%;
+    text-align: right;
+    margin: 40px auto;
+
+    .regBtn {
+        color: white;
+        padding: 8px 22px;
+        background-color: #4b8aaf;
+        border: 1px solid black;
+        border-radius: 2px;
+        outline: none;
+        box-shadow: none;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover,
+        &:focus {
+            background-color: darken(#4b8aaf, 10%);
+        }
+    }
+
+
+    .logBtn {
+        color: white;
+        padding: 8px 22px;
+        background-color: #4baf77;
+        border: 1px solid black;
+        border-radius: 2px;
+        outline: none;
+        box-shadow: none;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover,
+        &:focus {
+            background-color: darken(#4baf77, 10%);
+        }
+    }
+}
+
+
+.spanError {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    font-size: 10px;
+    text-align: right;
+    width: 43%;
+    margin: 0 auto;
+    color: #828a9d;
+}
+
+
+.titleLog {
+    font-size: 32px;
+}
+
+.errmsg {
+    display: block;
+    position: absolute;
+    background: #5b2d34;
+    padding: 3px 12px;
+    font-size: 12px;
+    color: #d3d3d3;
+    border-radius: 3px;
+}
+
+.profile {
+
+    h4 {
+        margin: 5px 0;
+        font-size: 16px;
+
+        span {
+            font-weight: 400;
+            color: #d3f6ff;
+        }
+    }
+
+}
+
+.changeBtn {
+    min-width: 143px;
+    font-size: 14px;
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+.changeEmail {
+    background-color: #303c54;
+    transition: all 0.25s;
+
+    &:hover,
+    &:focus {
+        background-color: lighten(#303c54, 12%);
+    }
+}
+
+.changePassword {
+    background-color: #563737;
+    transition: all 0.25s;
+
+    &:hover,
+    &:focus {
+        background-color: lighten(#563737, 10%);
+    }
+}
+
+.changeInput {
+    display: inline-block;
+    max-width: 218px;
+    margin: 0 auto;
+    padding: 6px 10px;
+}
+
+.changeBtnSub {
+    margin: 0 0px 0 25px;
+    padding: 6px 18px;
+    outline: none;
+    background: #2c6c66;
+    border: 1px solid #5db1a9;
+    color: white;
+    transition: all 0.25s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: lighten(#2c6c66, 10%);
+    }
+}
+
+.changeForm {
+    padding: 10px;
+    margin: 25px 0px 0px;
+}
+
+.changeLabel {
+    width: 41% !important;
+}
+
+
+.profileInfo {
+    width: 50%; 
+    margin: 30px auto 50px;
+    text-align: left;
+    padding: 12px 25px;
+    background: #2b303a;
+    border: 2px solid #525763;
+}
+
+.changeSpanError {
+    position: absolute;
+    bottom: -26px;
+    left: 22px;
+    right: 0;
+    font-size: 10px;
+    text-align: left;
+    width: 43%;
+    margin: 0 auto;
+    color: #828a9d;
+}
+
+.successful {
+    font-weight: 400;
+    font-size: 18px;
+    color: wheat;
+}

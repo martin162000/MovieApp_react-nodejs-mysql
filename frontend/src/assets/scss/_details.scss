@@ -1,0 +1,166 @@
+.detailMovie {
+    color: #9fa7bb;
+    text-align: left;
+    max-width: 100%;
+    margin: 0 auto 2em;
+    position: relative;
+    box-sizing: border-box;
+    background-color: $bgColorHeader;
+    margin-top: 3.5em;
+    //border-radius: 8px;
+	border: 2px solid lighten($bgColorHeader, 10%);
+
+
+	.divstar {
+		height: 0;
+
+	}
+
+	.starLogin	{
+		cursor: pointer;
+		position: relative;
+		top: -76px;
+		font-size: 12px;
+		left: -35px;
+		background: #63cbe3;
+		padding: 5px 12px;
+		border: 1px	 solid black;
+		color: #282c34;
+		border-radius: 2px;
+		transition: all 0.2s;
+
+		&:hover,
+		&:focus {
+			background: darken(#63cbe3, 15%);
+			color: black;
+		}
+	}
+
+	.star {
+		cursor: pointer;
+		font-size: 2em;
+		position: relative;
+		right: 0.5em;
+		text-align: center;
+		color: #61dafb;
+		//padding: 0 0.24em;
+		top: -19px;
+		
+	}
+
+	.starActive {
+		font-size: 2.1em;
+		color: #61dafb;
+
+	}
+
+	strong {
+		color: #c4e4ff;
+		font-weight: 600;
+	}
+
+
+	.detailInside {
+		padding: 2em 1.75em;
+	}
+
+    .detailDivPicture{
+        float:left;
+        width: 10em;
+    }
+
+    .detailText{
+        float: left;
+        max-width: 60%;
+        padding-left: 1.5em;
+        font-size: 0.85em;
+    }
+
+    .plot {
+        background: #525763;
+       // border: 1px solid #9fa7bb;
+        padding: 0.7em;
+        font-size: 0.9em;
+        margin-top: 20em;
+    }
+
+    .plot{
+        clear: both;
+    }
+
+    p {
+        margin: 0;
+    }
+
+	a {
+		text-decoration: none;
+	}
+
+	h2 {
+		line-height: 1.5em;
+		margin: 0;
+		font-size: 25px;
+		text-align: center;
+		padding-bottom: 0.5em;
+		color: lighten($bgColorHeader, 60%);
+		margin-bottom: 1.0em;
+		border-bottom: 1px solid #40444c;
+	}
+
+
+	img {
+		width: 10em;
+		outline: 3px solid lighten($bgColorHeader, 20%);
+		min-height: 14em;
+	}
+
+
+
+	.meta {
+		font-size: 0.75em;
+		font-weight: 800;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.9);
+		padding: 1.5em 2.25em;
+		background: #101010;
+	}
+
+
+
+	@media (max-width: 650px) {
+		max-width: 50%;
+		min-width: 300px;
+
+		.detailDivPicture{
+			margin: 0 auto;
+			width: 13em;
+			float: none;
+		 }
+
+		.detailText{
+			float: left;
+			max-width: 100%;
+			padding-left: 1em;
+			font-size: 0.85em;
+			margin-top: 2em;
+			}
+
+		 .plot {
+			background: $bgColorHeader;
+			padding: 0.7em;
+			font-size: 0.9em;
+			margin-top: 23em;
+			border: 1px solid #676c76;
+		 }
+
+		 img {
+			width: 13em;
+			min-height: 14em;
+		}
+
+		.star {
+			right: 0.7em;
+		}
+	}
+}
+

@@ -1,0 +1,59 @@
+.movie {
+	color: #262626;
+	text-align: left;
+	max-width: 13.63em;
+	margin: 0 auto 2em;
+	position: relative;
+	box-sizing: border-box;
+    background-color: $bgColorHeader;
+   // border-radius: 0.3em;
+
+	&:active,
+	&:hover{
+		background-color: lighten($bgColorHeader, 15%);
+		cursor: pointer;
+		outline: 2px solid white;
+	}
+
+	.inside {
+		padding: 1.35em 1.75em 1.75em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	h2 {
+		font-size: inherit;
+		line-height: 1.5em;
+		margin: 0;
+		text-align: center;
+		color: lighten($bgColorHeader, 60%);
+	}
+
+	.imgMovie {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: 1.5em;
+	}
+
+	img {
+		width: 10em;
+		outline: 2px solid lighten($bgColorHeader, 20%);
+		min-height: 14em;
+	}
+
+
+	.meta {
+		font-size: 0.75em;
+		font-weight: 800;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.9);
+		padding: 1.5em 2.25em;
+		background: #101010;
+	}
+}
+
+

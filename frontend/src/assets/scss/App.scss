@@ -1,0 +1,61 @@
+$bgColor:#282c34;
+$bgColorHeader: #525763;
+
+body {
+	font-size: 1em;
+	color: white;
+	background-color: $bgColor;
+	margin: 0;
+	padding: 0;
+}
+
+@import "./details";
+@import "./favorite";
+@import "./theNavigation";
+@import "./movie";
+@import "./movieList";
+@import "./moviesSearchForm";
+@import "./animations";
+@import "./user";
+
+
+.App {
+	font: {
+		size: 1em;
+		family: 'Nunito Sans', helvetica, arial, sans-serif;
+		weight: 600;
+	}
+
+	text-align: center;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+header {
+	/*border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	margin-bottom: 1em;
+	background-color: transparentize(rgba(black, 1), 0.88);*/
+	margin-bottom: 1em;
+    height: 27px;
+    background-color: $bgColorHeader;
+}
+
+.content {
+    font-size: 1.15em;
+    line-height: 1.5em;
+    margin: 0 auto 2em;
+    max-width: 48em;
+    padding: 3.5em 1.75em 0;
+    margin-top: 5em;
+}
+
+article {
+	text-align: left;
+}
+
+@media screen and (max-width: 520px) {
+	.App {
+		font-size: 0.85em;
+	}
+}
