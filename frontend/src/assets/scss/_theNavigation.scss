@@ -51,6 +51,8 @@
     height: 28px;
     text-transform: uppercase;
 
+
+
 	a {
 		color: white;
         font-size: 10px;
@@ -65,5 +67,22 @@
             color: white;
 		}
 	}
+
+    @media screen and (max-width: 800px) { 
+        margin-left: 10%;
+    }
+
+    @media screen and (max-width: 720px) { 
+        margin-left: 5%;
+    }
+
+
+    @media screen and (max-width: 600px) { 
+        margin-left: 3%;
+        height: auto;
+        a {
+            display: block;
+        }
+    }
 }
 

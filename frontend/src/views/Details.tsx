@@ -89,9 +89,25 @@ const Details = () => {
                     type: "ADD_FAVORITE",
                     playload: result
                 });
+
+
+                axios.post("http://localhost:3001/addMovieHistory", {
+                    iduser: state.userInfo.id,
+                    title: result.title,
+                    linkApi: result.linkApi,
+                    type: result.type,
+                    action: "ADDED"
+                  }).then((response) => {
+                      
+                  })
+
+
              }
 
           })
+
+
+
 
         // Duplicite cant add only frontend
        /* if(state.allMovies.favorites !== undefined && state.allMovies.favorites.find( ({ linkApi }:any) => linkApi === detail )) {

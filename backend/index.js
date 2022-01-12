@@ -163,8 +163,24 @@ app.post('/updatePassword', (req, res) => {
                     throw err;
                 }
                  res.send({messageTrue: "User password was updated"}); 
+
+
+                let sqlCommand = "INSERT INTO users_history (username, action, date)";
+                sqlCommand += " VALUES (?,?,?);";
+                let created = new Date();
+                db.query(
+                    sqlCommand,
+                        [username, "changePassword", created],
+                        (err) => {
+                            if(err) {
+                                throw err;
+                            }
+                            }
+                        ); 
+
                 }
              ); 
+
     })
 
 })
@@ -188,10 +204,23 @@ app.post('/updateEmail', (req, res) => {
             throw err;
         }
 
+        let sqlCommand = "INSERT INTO users_history (username, action, date)";
+        sqlCommand += " VALUES (?,?,?);";
+        let created = new Date();
+        db.query(
+            sqlCommand,
+                [username, "changeEmail", created],
+                (err) => {
+                    if(err) {
+                        throw err;
+                    }
+                    }
+                ); 
+
          res.send({messageTrue: "User email was updated"}); 
-        
         }
      ); 
+
 })
 
 
@@ -230,6 +259,40 @@ app.post('/addFavourite', (req, res) => {
 
 
 
+app.post('/addMovieHistory', (req, res) => {
+    const iduser = req.body.iduser;
+    const title = req.body.title;
+    const linkApi = req.body.linkApi;
+    const type = req.body.type;
+    const action = req.body.action;
+
+
+
+    let sqlCommand = "INSERT INTO movies_history (id_user, title, linkApi, type, action) ";
+    sqlCommand += " VALUES (?,?,?,?,?);";
+
+
+
+    db.query(
+        sqlCommand,
+         [iduser,title,linkApi,type,action],
+          (err, result) => {
+            if(err) {
+                throw err;
+            }
+
+            if(result.affectedRows > 0)
+                res.send({messageTrue: "Movie added to history"}); 
+            
+            }
+         ); 
+
+})
+
+
+
+
+
 app.post('/deleteFavourite', (req, res) => {
     const userid = req.session.user[0].id
     const linkApi = req.body.linkApi;
@@ -258,6 +321,51 @@ app.post('/deleteFavourite', (req, res) => {
 //********************** GET ***************************// 
 //********************** GET ***************************// 
 //********************** GET ***************************// 
+
+
+app.get("/getUserHistory", (req, res) => {
+
+    if(req.session.user) {
+        const username = req.session.user[0].username
+        db.query(
+            "SELECT action, date from users_history WHERE username = ?;",
+             [username],
+              (err, result) => {
+                if(err) {
+                    throw err;
+                } 
+                    res.send({usersHistory: result});
+                }
+             ); 
+
+
+    } else {
+        res.send({loggedIn: false});
+    }
+})
+
+
+app.get("/getMoviesHistory", (req, res) => {
+
+    if(req.session.user) {
+        const userid = req.session.user[0].id
+        db.query(
+            "SELECT title, linkApi, type, action from movies_history WHERE id_user = ?;",
+             [userid],
+              (err, result) => {
+                if(err) {
+                    throw err;
+                } 
+                    res.send({moviesHistory: result});
+                }
+             ); 
+
+
+    } else {
+        res.send({loggedIn: false});
+    }
+})
+
 
 app.get("/details", (req, res) => {
 

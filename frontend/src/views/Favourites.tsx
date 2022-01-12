@@ -26,6 +26,8 @@ const Favourites = () => {
         const { id } = JSON.parse(e.target.dataset.onclickparam)
         const favoritiesMovies:[] = state.allMovies.favorites;
         const result = favoritiesMovies.filter((movie: any) => movie.linkApi !== id); // Remove by ID
+        const removed:any = favoritiesMovies.filter((movie: any) => movie.linkApi == id); // Removed movie
+
 
         axios.post("http://localhost:3001/deleteFavourite", {
             linkApi: id
@@ -36,6 +38,19 @@ const Favourites = () => {
                     type: "SET_FAVORITE",
                     playload: result
                   });
+
+                  
+                axios.post("http://localhost:3001/addMovieHistory", {
+                    iduser: state.userInfo.id,
+                    title: removed[0].title,
+                    linkApi: removed[0].linkApi,
+                    type: removed[0].type,
+                    action: "REMOVED"
+                  }).then((response) => {
+                      
+                  })
+
+                  
              }
 
           })
